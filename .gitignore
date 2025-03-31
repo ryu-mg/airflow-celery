@@ -1,0 +1,10 @@
+config/*
+
+.airflowignore
+
+airflow.db
+airflow-webserver.pid
+
+webserver_config.py
+
+logs/*
