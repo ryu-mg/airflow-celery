@@ -1,10 +1,6 @@
-config/*
-
-.airflowignore
+config/.env
 
 airflow.db
 airflow-webserver.pid
-
-webserver_config.py
 
 logs/*
