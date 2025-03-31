@@ -6,7 +6,7 @@ authors = ["socar-chopa <chopa@socar.kr>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
 
 
 [build-system]
