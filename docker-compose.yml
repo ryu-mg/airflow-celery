@@ -3,7 +3,9 @@ version: '3'
 services:
   # PostgreSQL 데이터베이스 - Airflow 메타데이터 저장 용도
   postgres:
-    image: postgres:13
+    image: postgres:17.4-alpine
+    ports:
+      - "5432:5432"
     volumes:
       - /Users/nine2one/Desktop/pg_data:/var/lib/postgresql/data
     healthcheck:
@@ -84,6 +86,4 @@ services:
       - "5555:5555"
     env_file:
       - config/.env
-
-volumes:
-  postgres-db-volume: 
+      
