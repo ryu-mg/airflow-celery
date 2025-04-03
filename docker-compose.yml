@@ -1,0 +1,89 @@
+version: '3'
+
+services:
+  # PostgreSQL 데이터베이스 - Airflow 메타데이터 저장 용도
+  postgres:
+    image: postgres:13
+    volumes:
+      - /Users/nine2one/Desktop/pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 5s
+      retries: 5
+    restart: always
+    env_file:
+      - config/.env
+
+  # RabbitMQ - Celery 메시지 브로커로 사용
+  rabbitmq:
+    image: rabbitmq:3.13.7-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: ["CMD", "rabbitmqctl", "status"]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+    restart: always
+    env_file:
+      - config/.env
+
+  # Airflow scheduler
+  scheduler:
+    build: .
+    command: airflow scheduler
+    depends_on:
+      - postgres
+      - rabbitmq
+    volumes:
+      - ./dags:/app/dags
+      - ./logs:/app/logs
+      - ./plugins:/app/plugins
+      - ./config:/app/config
+    env_file:
+      - config/.env
+  
+  # Airflow webserver
+  webserver:
+    build: .
+    command: airflow webserver
+    depends_on:
+      - scheduler
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./dags:/app/dags
+      - ./logs:/app/logs
+      - ./plugins:/app/plugins
+      - ./config:/app/config
+    env_file:
+      - config/.env
+
+  # Airflow 워커
+  worker:
+    build: .
+    command: airflow celery worker
+    depends_on:
+      - webserver
+    volumes:
+      - ./dags:/app/dags
+      - ./logs:/app/logs
+      - ./plugins:/app/plugins
+      - ./config:/app/config
+    env_file:
+      - config/.env
+
+  # Flower - Celery 모니터링 도구
+  flower:
+    build: .
+    command: airflow celery flower
+    depends_on:
+      - worker
+    ports:
+      - "5555:5555"
+    env_file:
+      - config/.env
+
+volumes:
+  postgres-db-volume: 
