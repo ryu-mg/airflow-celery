@@ -1,0 +1,28 @@
+version: '3'  # Docker Compose 파일 형식 버전
+
+# airflow db init 을 진행한다. 최초 1회만 실행  # 이미 주석 존재
+
+services:
+  postgres:
+    image: postgres:17.4-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - /Users/nine2one/Desktop/pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 5s
+      retries: 5
+    restart: always
+    env_file:
+      - config/.env
+
+  # Airflow 데이터베이스 초기화 서비스
+  init-db:
+    build: .
+    command: bash -c "airflow db init && airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com"
+    depends_on:
+      postgres:
+        condition: service_healthy  # PostgreSQL이 정상 상태일 때만 실행
+    env_file:
+      - config/.env
