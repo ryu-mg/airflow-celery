@@ -12,6 +12,7 @@ apache-airflow = {extras = ["celery"], version = "^2.10.5"}
 psycopg2-binary = "^2.9.10"
 apache-airflow-providers-postgres = "^6.1.1"
 apache-airflow-providers-sqlite = "^4.0.1"
+pyamqp = "^0.1.0.7"
 
 
 [build-system]

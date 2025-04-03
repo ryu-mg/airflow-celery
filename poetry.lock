@@ -421,13 +421,13 @@ zendesk = ["apache-airflow-providers-zendesk"]
 
 [[package]]
 name = "apache-airflow-providers-celery"
-version = "3.10.3"
+version = "3.10.4"
 description = "Provider package apache-airflow-providers-celery for Apache Airflow"
 optional = false
 python-versions = "~=3.9"
 files = [
-    {file = "apache_airflow_providers_celery-3.10.3-py3-none-any.whl", hash = "sha256:efeb72e47e8edd91f37d582608d95ec3dbd92dbb4efc66896f8424a23d1af967"},
-    {file = "apache_airflow_providers_celery-3.10.3.tar.gz", hash = "sha256:363a4bef68fdc1f1e43b7bc17455436d12f56a4edfd14cb82e1ea769df0ab109"},
+    {file = "apache_airflow_providers_celery-3.10.4-py3-none-any.whl", hash = "sha256:4d3c6394a53c033ba62a1ad373798970a72b3c81d0a9aeaba7d2b1e3e5b06aec"},
+    {file = "apache_airflow_providers_celery-3.10.4.tar.gz", hash = "sha256:989ba1f7ecfb3e79f5c866dcd73c09dbd9c821806e4536ee97c4380937e1a36c"},
 ]
 
 [package.dependencies]
@@ -440,13 +440,13 @@ cncf-kubernetes = ["apache-airflow-providers-cncf-kubernetes (>=7.4.0)"]
 
 [[package]]
 name = "apache-airflow-providers-common-compat"
-version = "1.5.1"
+version = "1.6.0"
 description = "Provider package apache-airflow-providers-common-compat for Apache Airflow"
 optional = false
 python-versions = "~=3.9"
 files = [
-    {file = "apache_airflow_providers_common_compat-1.5.1-py3-none-any.whl", hash = "sha256:234201cd1b34216856c9e728e43324a79e7aae49c1d08f7d464631413cdee1e1"},
-    {file = "apache_airflow_providers_common_compat-1.5.1.tar.gz", hash = "sha256:91f74168e8f21fddf9cd80eb9638e05d9e996eef71772158eb06a4ddef9ff5ff"},
+    {file = "apache_airflow_providers_common_compat-1.6.0-py3-none-any.whl", hash = "sha256:5dce9d66b087e584f9f240270aa555dc31a7afea5980dbb6e76347d59994694e"},
+    {file = "apache_airflow_providers_common_compat-1.6.0.tar.gz", hash = "sha256:f6aed86141041301d7df243f2b80bd94e12893971988db8ae1d54d4fb7763e21"},
 ]
 
 [package.dependencies]
@@ -458,13 +458,13 @@ standard = ["apache-airflow-providers-standard"]
 
 [[package]]
 name = "apache-airflow-providers-common-io"
-version = "1.5.1"
+version = "1.5.2"
 description = "Provider package apache-airflow-providers-common-io for Apache Airflow"
 optional = false
 python-versions = "~=3.9"
 files = [
-    {file = "apache_airflow_providers_common_io-1.5.1-py3-none-any.whl", hash = "sha256:67bf0cafbba70f4bda7b3493f4b36b8f36b7b896a0dbc67d67b9369d17bb25da"},
-    {file = "apache_airflow_providers_common_io-1.5.1.tar.gz", hash = "sha256:d934cbc6508035bbe393afbb3681c052191a0ac8d45167d09e2c172aebc1f0e1"},
+    {file = "apache_airflow_providers_common_io-1.5.2-py3-none-any.whl", hash = "sha256:ce84927890a3675792305e570ee8aed4bc67ccf8b9eb445722b14911fb78e98a"},
+    {file = "apache_airflow_providers_common_io-1.5.2.tar.gz", hash = "sha256:70634485b7cb37430ca46f577a8efafadcac9da9853ec841d6b8455ea1826030"},
 ]
 
 [package.dependencies]
@@ -476,13 +476,13 @@ openlineage = ["apache-airflow-providers-openlineage"]
 
 [[package]]
 name = "apache-airflow-providers-common-sql"
-version = "1.24.0"
+version = "1.24.1"
 description = "Provider package apache-airflow-providers-common-sql for Apache Airflow"
 optional = false
 python-versions = "~=3.9"
 files = [
-    {file = "apache_airflow_providers_common_sql-1.24.0-py3-none-any.whl", hash = "sha256:d9bdaf27041a9562d0acc25fd96007c363b1e776416deea6d9ae8513fedccc55"},
-    {file = "apache_airflow_providers_common_sql-1.24.0.tar.gz", hash = "sha256:6ad34cd49c0fb4dea632fa7b9cf446461cdaba207ea13d4b31b341668482a507"},
+    {file = "apache_airflow_providers_common_sql-1.24.1-py3-none-any.whl", hash = "sha256:43723f76816f1c3d3fdafdf449a8fa67e67eb93551aa5705c96e1123ae15bca1"},
+    {file = "apache_airflow_providers_common_sql-1.24.1.tar.gz", hash = "sha256:ce36740997fea216c103204b01d1fcdac2e856d0f3e4ac6cc8b5e9da3e8881ba"},
 ]
 
 [package.dependencies]
@@ -591,17 +591,18 @@ openlineage = ["apache-airflow-providers-openlineage"]
 
 [[package]]
 name = "apache-airflow-providers-smtp"
-version = "2.0.1"
+version = "2.0.2"
 description = "Provider package apache-airflow-providers-smtp for Apache Airflow"
 optional = false
 python-versions = "~=3.9"
 files = [
-    {file = "apache_airflow_providers_smtp-2.0.1-py3-none-any.whl", hash = "sha256:bbafcf0d9efbec3c52b9ec995ddcd8c0d05b6492ded7247df9367b7285b877c6"},
-    {file = "apache_airflow_providers_smtp-2.0.1.tar.gz", hash = "sha256:9cc48ed90758ee7468dc014989f0814324f6a830f21c5c8eda354f7b3fa13f80"},
+    {file = "apache_airflow_providers_smtp-2.0.2-py3-none-any.whl", hash = "sha256:8f3eb27cbd34e1a065d638d2bd67fadd1828d4ab084dd7b31d82a7f27d012a38"},
+    {file = "apache_airflow_providers_smtp-2.0.2.tar.gz", hash = "sha256:d049f99ea528a3d13cb08e11b164b85de92cf6d85b5dea240dfe596180bd8ae6"},
 ]
 
 [package.dependencies]
 apache-airflow = ">=2.9.0"
+apache-airflow-providers-common-compat = ">=1.6.0"
 
 [[package]]
 name = "apache-airflow-providers-sqlite"
@@ -2085,6 +2086,17 @@ files = [
 ]
 
 [[package]]
+name = "iniconfig"
+version = "2.1.0"
+description = "brain-dead simple config-ini parsing"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "iniconfig-2.1.0-py3-none-any.whl", hash = "sha256:9deba5723312380e77435581c6bf4935c94cbfab9b1ed33ef8d238ea168eb760"},
+    {file = "iniconfig-2.1.0.tar.gz", hash = "sha256:3abbd2e30b36733fee78f9c7f7308f2d0050e88f0087fd25c2645f63c773e1c7"},
+]
+
+[[package]]
 name = "itsdangerous"
 version = "2.2.0"
 description = "Safely pass data to untrusted environments and back."
@@ -2896,6 +2908,21 @@ tzdata = ">=2020.1"
 test = ["time-machine (>=2.6.0)"]
 
 [[package]]
+name = "pika"
+version = "0.13.0"
+description = "Pika Python AMQP Client Library"
+optional = false
+python-versions = "*"
+files = [
+    {file = "pika-0.13.0-py2.py3-none-any.whl", hash = "sha256:847916ada527ee064025c1a0b981dc6856ea333734e695012006c24cab233bca"},
+    {file = "pika-0.13.0.tar.gz", hash = "sha256:5338d829d1edb3e5bcf1523b4a9e32c56dea5a8bda7018825849e35325580484"},
+]
+
+[package.extras]
+tornado = ["tornado"]
+twisted = ["twisted"]
+
+[[package]]
 name = "pluggy"
 version = "1.5.0"
 description = "plugin and hook calling mechanisms for python"
@@ -3183,6 +3210,21 @@ files = [
 ]
 
 [[package]]
+name = "pyamqp"
+version = "0.1.0.7"
+description = "Python interface for simple usage of AMQP middleware applications."
+optional = false
+python-versions = ">=3.6.0"
+files = [
+    {file = "PyAMQP-0.1.0.7-py2.py3-none-any.whl", hash = "sha256:d10a1c0e687f49784cdf2c3de101862fa698d3f156f7a35c5f899bf98012d5ca"},
+    {file = "PyAMQP-0.1.0.7.tar.gz", hash = "sha256:fff1d481cc3991eb4283f5bc465757b1e3842567ea51c571bb3a921881db1cff"},
+]
+
+[package.dependencies]
+pika = "0.13"
+pytest = "*"
+
+[[package]]
 name = "pycparser"
 version = "2.22"
 description = "C parser in Python"
@@ -3223,6 +3265,26 @@ crypto = ["cryptography (>=3.4.0)"]
 dev = ["coverage[toml] (==5.0.4)", "cryptography (>=3.4.0)", "pre-commit", "pytest (>=6.0.0,<7.0.0)", "sphinx", "sphinx-rtd-theme", "zope.interface"]
 docs = ["sphinx", "sphinx-rtd-theme", "zope.interface"]
 tests = ["coverage[toml] (==5.0.4)", "pytest (>=6.0.0,<7.0.0)"]
+
+[[package]]
+name = "pytest"
+version = "8.3.5"
+description = "pytest: simple powerful testing with Python"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "pytest-8.3.5-py3-none-any.whl", hash = "sha256:c69214aa47deac29fad6c2a4f590b9c4a9fdb16a403176fe154b79c0b4d4d820"},
+    {file = "pytest-8.3.5.tar.gz", hash = "sha256:f4efe70cc14e511565ac476b57c279e12a855b11f48f212af1080ef2263d3845"},
+]
+
+[package.dependencies]
+colorama = {version = "*", markers = "sys_platform == \"win32\""}
+iniconfig = "*"
+packaging = "*"
+pluggy = ">=1.5,<2"
+
+[package.extras]
+dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments (>=2.7.2)", "requests", "setuptools", "xmlschema"]
 
 [[package]]
 name = "python-daemon"
@@ -4279,4 +4341,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11,<3.12"
-content-hash = "a3d12b6f2e6324c32ea158694b1d23fc6555452e0a15afb23602b6e1d5b620de"
+content-hash = "21990d65312f930cd6073432a112d2fa034808beed1b09a495691009ea217663"
