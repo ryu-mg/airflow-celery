@@ -16,5 +16,5 @@ up:
 down:
 	docker compose down
 	
-db_init:
-	docker compose -f airflow-db-init.yml up
+init:
+	docker compose --profile init up init

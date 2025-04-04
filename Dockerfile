@@ -1,8 +1,10 @@
 # 기본 이미지로 Python 3.11 사용 (pyproject.toml에 명시된 Python 버전)
 FROM python:3.11-slim
 
+ARG AIRFLOW_HOME=/opt/airflow
+
 # 작업 디렉토리 설정
-WORKDIR /app
+WORKDIR ${AIRFLOW_HOME}
 
 # 필요한 시스템 패키지 설치 (PostgreSQL 클라이언트 라이브러리 및 기타 의존성)
 # --no-install-recommend
@@ -31,6 +33,3 @@ RUN poetry install --no-interaction --no-ansi
 
 # 애플리케이션 파일 복사
 COPY . .
-
-# Airflow 홈 디렉토리 설정
-ENV AIRFLOW_HOME=/app
