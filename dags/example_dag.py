@@ -19,12 +19,9 @@ def print_hello():
 with DAG(
     'hello_world_dag',             
     default_args=default_args,
-    description='A simple Hello World DAG',
-    schedule_interval=timedelta(days=1),
+    schedule_interval=None,
     catchup=False,
 ) as dag:
-
-    # 태스크 정의
     hello_task = PythonOperator(
         task_id='hello_task',
         python_callable=print_hello,
