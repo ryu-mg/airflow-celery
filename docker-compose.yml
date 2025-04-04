@@ -72,11 +72,11 @@ services:
   webserver:
     <<: *airflow-common
     command: airflow webserver
-    # healthcheck:
-    #   test: ["CMD", "curl", "--fail", "http://127.0.0.1:8080/health"]
-    #   interval: 10s
-    #   timeout: 10s
-    #   retries: 5
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
     depends_on:
       scheduler:
         condition: service_healthy
@@ -89,7 +89,8 @@ services:
     <<: *airflow-common
     command: airflow celery worker
     depends_on:
-     -  webserver
+      webserver:
+        condition: service_healthy
 
 
   # Flower - Celery 모니터링 도구

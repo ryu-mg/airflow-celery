@@ -15,6 +15,7 @@ WORKDIR ${AIRFLOW_HOME}
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libpq-dev \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Poetry 설치(python 3.11 이미지에 pip 설치되어 있음)
