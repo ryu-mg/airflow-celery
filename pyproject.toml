@@ -2,7 +2,7 @@
 name = "airflow-celery"
 version = "0.1.0"
 description = ""
-authors = ["socar-chopa <chopa@socar.kr>"]
+authors = ["ryu-mg"]
 readme = "README.md"
 package-mode = false
 
@@ -13,6 +13,7 @@ psycopg2-binary = "^2.9.10"
 apache-airflow-providers-postgres = "^6.1.1"
 apache-airflow-providers-sqlite = "^4.0.1"
 pyamqp = "^0.1.0.7"
+apache-airflow-providers-celery = {version = "3.10.0", extras = ["cncf.kubernetes"]}
 
 
 [build-system]
