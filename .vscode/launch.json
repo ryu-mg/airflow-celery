@@ -1,0 +1,24 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Airflow Debugger",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/.venv/bin/airflow",  // for local test
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/config/local.env",
+            "env": {
+                "AIRFLOW_HOME": "${workspaceFolder}",
+                "AIRFLOW_CONFIG": "${workspaceFolder}/config/airflow.cfg",
+                "AIRFLOW__WEBSERVER__CONFIG_FILE": "${workspaceFolder}/config/webserver_config.py",
+                "AIRFLOW__DATABASE__SQL_ALCHEMY_CONN": "postgresql+psycopg2://airflow:airflow@localhost:5432/airflow"
+            },
+            "args": [
+                "dags",
+                "test",
+                "hello_world_dag"
+            ]
+        }
+    ]
+}

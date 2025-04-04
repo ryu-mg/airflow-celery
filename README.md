@@ -15,35 +15,26 @@
    # Poetry 설치
    pip install poetry
 
-   # 의존성 설치 (둘 중 택 1)
-   make install
-   # 또는
+   # 의존성 설치
+   poetry config virtualenvs.in-project true  # for local test. vsCode 기준 launch.json 에서 사용할 program 을 잡기 위해
    poetry install
    ```
 
 2. Docker 환경 구성 및 실행:
    ```bash
-   # 빌드 및 시작 (둘 중 택 1)
-   make build
-   # 또는
+   # 빌드 및 시작
    docker compose build && docker compose up
    
-   # 서비스 중지 (둘 중 택 1)
-   make down
-   # 또는
+   # 서비스 중지
    docker compose down
    ```
 
 3. 초기화 및 마이그레이션 (필요한 경우):
    ```bash
-   # 초기화 (둘 중 택 1)
-   make init
-   # 또는
+   # 초기화
    docker-compose --profile init up init
    
-   # 마이그레이션 (둘 중 택 1)
-   make migrate
-   # 또는
+   # 마이그레이션
    docker-compose --profile migrate up migrate
    ```
 
@@ -59,17 +50,3 @@
 3. Worker
 4. Webserver
 5. Flower
-
-## 개발 환경 설정
-Poetry를 사용한 로컬 개발 환경 설정:
-
-```bash
-# Poetry 설치
-pip install poetry
-
-# 의존성 설치
-poetry install
-
-# 가상 환경 활성화
-poetry shell
-```
