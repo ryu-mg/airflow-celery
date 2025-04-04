@@ -20,4 +20,10 @@ init:
 	docker compose --profile init up init
 
 migrate:
-	docker compose --profile migrate up migrate	
+	docker compose --profile migrate up migrate
+
+install:
+	poetry install
+
+update:
+	poetry update
