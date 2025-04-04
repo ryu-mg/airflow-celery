@@ -13,7 +13,7 @@ x-airflow-common: &airflow-common
     AIRFLOW_CONFIG: /opt/airflow/config/airflow.cfg
     AIRFLOW__WEBSERVER__CONFIG_FILE: /opt/airflow/config/webserver_config.py
   env_file: &airflow-common-env-file
-    - config/.env
+    - config/local.env
   
 
 
