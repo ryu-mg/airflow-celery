@@ -4,3 +4,9 @@ airflow.db
 airflow-webserver.pid
 
 logs/*
+
+.dockerignore
+
+.pgdata
+
+__pycache__/
