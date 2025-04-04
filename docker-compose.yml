@@ -11,6 +11,7 @@ x-airflow-common: &airflow-common
   environment: &airflow-common-env
     AIRFLOW_HOME: /opt/airflow
     AIRFLOW_CONFIG: /opt/airflow/config/airflow.cfg
+    AIRFLOW__WEBSERVER__CONFIG_FILE: /opt/airflow/config/webserver_config.py
   env_file: &airflow-common-env-file
     - config/.env
   
@@ -71,11 +72,11 @@ services:
   webserver:
     <<: *airflow-common
     command: airflow webserver
-    healthcheck:
-      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
-      interval: 10s
-      timeout: 10s
-      retries: 5
+    # healthcheck:
+    #   test: ["CMD", "curl", "--fail", "http://127.0.0.1:8080/health"]
+    #   interval: 10s
+    #   timeout: 10s
+    #   retries: 5
     depends_on:
       scheduler:
         condition: service_healthy
@@ -88,8 +89,7 @@ services:
     <<: *airflow-common
     command: airflow celery worker
     depends_on:
-      webserver:
-        condition: service_healthy
+     -  webserver
 
 
   # Flower - Celery 모니터링 도구
@@ -110,8 +110,6 @@ services:
     command: bash -c "airflow db init && airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com"
     depends_on:
       postgres:
-        condition: service_healthy  # PostgreSQL이 정상 상태일 때만 실행
+        condition: service_healthy
     profiles:
       - init
-    env_file:
-     - config/.env
