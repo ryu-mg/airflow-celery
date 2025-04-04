@@ -1,12 +1,12 @@
-config/.env
-
 airflow.db
 airflow-webserver.pid
 
+config/.env
 logs/*
 
 .dockerignore
-
 .pgdata
+.cursor
 
 __pycache__/
+
